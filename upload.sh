@@ -15,4 +15,4 @@ if command -v gh &>/dev/null; then
   gh pr create --title "$COMMIT_MESSAGE" --body "Update $TODAY"
 fi
 
-echo "Ready to go to Mars!"
+echo "Ready to go to Mars 🚀"
