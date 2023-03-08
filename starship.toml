@@ -1,7 +1,11 @@
 # ~/.config/starship.toml
 format = """
 [░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
+$username(bg:#769ff0 fg:#a3aed2)\
+[](bg:#a3aed2 bold)\
+$hostname(bg:#769ff0 fg:#a3aed2)\
+$battery\
+$container\
 [](bg:#769ff0 fg:#a3aed2)\
 $directory\
 [](fg:#769ff0 bg:#394260)\
@@ -11,11 +15,12 @@ $git_status\
 $fill\
 [ ](fg:#1d2230)\
 $nodejs\
+$python\
 $rust\
 $golang\
 $php\
-$cmd_duration\ 
 $jobs\
+$cmd_duration\ 
 $time\
 [ ](fg:#1d2230)\
 \n$character"""
@@ -26,11 +31,11 @@ symbol = " "
 
 [jobs]
 number_threshold = 1
-format = "[$symbol]($style)"
-
+style = "fg:#769ff0 bg:#1d2230"
+format = "[$symbol $number]($style)"
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
+style = "fg:bold black bg:#769ff0"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -41,102 +46,96 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
-[git_branch]
-# symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
-ignore_branches = ['master', 'main']
-
-#[git_status]
-#style = "bg:#394260"
-#format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+[python]
+format = '[${symbol}(${version})($virtualenv )]($style)'
+style = "fg:#4B8BBE bg:#1d2230"
+pyenv_version_name = true
 
 [nodejs]
-# symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "fg:#3C873A bg:#1d2230"
+format = '[ $symbol ($version) ]($style)'
 
 [rust]
 # symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "fg:#FFD6A4 bg:#1d2230"
+format = '[ $symbol ($version) ]($style)'
 
 [golang]
 # symbol = "ﳑ"
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "fg:#29BEB0 bg:#1d2230"
+format = '[ $symbol ($version) ]($style)'
 
 [php]
 # symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "fg:#769ff0 bg:#1d2230"
+format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
 # time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
-
+style = "fg:cyan bg:#1d2230"
+format = '[  $time ]($style)'
 
 [battery]
 full_symbol = "󰂄"
 charging_symbol = "󱊥"
 discharging_symbol = "󰁺"
+# unknown_symbol = "󰁺"
+style= "bg:#a3aed2"
+format = "[ $symbol $percentage ]($style)"
 
 [[battery.display]]
 threshold = 30
-style = "bold red"
+style= "bg:#a3aed2"
 
 [character]
-error_symbol = "[✖](bold red) "
+error_symbol = "[󰅖](bold red) "
+success_symbol = "[](cyan)"
 
 [cmd_duration]
 min_time = 10  # Show command duration over 10 milliseconds 
-format = "[[$duration](bg:#1d2230)]($style)"
-style = "bold dimmed white"
+format = "[$symbol $duration]($style)"
+style = "fg:bold dimmed white bg:#1d2230"
+
+[git_branch]
+format = '[ $symbol $branch ]($style)'
+style = "fg:cyan bg:#394260"
+ignore_branches = ['master', 'main']
+
+[git_status]
+format = '[($all_status$ahead_behind )]($style)'
+style = "fg:cyan bg:#394260"
 
 [git_commit]
 commit_hash_length = 8
 style = "bold white"
 
-[git_status]
-format = '([$all_status$ahead_behind]($style))'
-style = "cyan"
-
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+format = '\([$state( $progress_current/$progress_total)($style)\) '
 style = "bright-black"
 
 [hostname]
 ssh_only = false
-format = "<[$hostname]($style)>"
+format = "[ $hostname]($style)"
 trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[julia]
-format = "[$symbol$version]($style) "
-symbol = "ஃ "
-style = "bold green"
+# style = "fg:green"
+style= "bg:#a3aed2"
+# disabled = true
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-style = "bold dimmed white"
+threshold = 0
+style = "#a3aed2"
 disabled = false
 
 [package]
-disabled = true
-
-[python]
-format = '[${symbol}(${version} )(\($virtualenv\) )]($style)'
-style = "bold green"
-pyenv_version_name = true
-
+disabled = false
 
 [username]
-style_user = "bold dimmed blue"
-show_always = false
+style_user= "bg:#a3aed2 bold"
+style_root = "bg:#a3aed2 bold"
+format = "[$user]($style)"
+show_always = true
 
 [container]
 format = '[$symbol \[$name\]]($style) '
