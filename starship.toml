@@ -2,7 +2,7 @@
 format = """
 [░▒▓](#a3aed2)\
 $username(bg:#769ff0 fg:#a3aed2)\
-[](bg:#a3aed2 bold)\
+[](bg:#a3aed2 fg:#0f172a bold )\
 $hostname(bg:#769ff0 fg:#a3aed2)\
 $battery\
 $container\
@@ -11,7 +11,7 @@ $directory\
 [](fg:#769ff0 bg:#394260)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
+[](fg:#394260 )\
 $fill\
 [ ](fg:#1d2230)\
 $nodejs\
@@ -35,7 +35,7 @@ style = "fg:#769ff0 bg:#1d2230"
 format = "[$symbol $number]($style)"
 
 [directory]
-style = "fg:bold black bg:#769ff0"
+style = "fg:#0f172a bold bg:#769ff0"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -80,13 +80,11 @@ format = '[  $time ]($style)'
 full_symbol = "󰂄"
 charging_symbol = "󱊥"
 discharging_symbol = "󰁺"
-# unknown_symbol = "󰁺"
-style= "bg:#a3aed2"
 format = "[ $symbol $percentage ]($style)"
 
 [[battery.display]]
-threshold = 30
-style= "bg:#a3aed2"
+threshold = 11
+style= "bg:#a3aed2 fg:#991b1b"
 
 [character]
 error_symbol = "[󰅖](bold red) "
@@ -119,7 +117,7 @@ ssh_only = false
 format = "[ $hostname]($style)"
 trim_at = "-"
 # style = "fg:green"
-style= "bg:#a3aed2"
+style= "fg:#0f172a bg:#a3aed2"
 # disabled = true
 
 [memory_usage]
@@ -132,8 +130,8 @@ disabled = false
 disabled = false
 
 [username]
-style_user= "bg:#a3aed2 bold"
-style_root = "bg:#a3aed2 bold"
+style_user= "fg:#4338ca bold bg:#a3aed2 bold"
+style_root = "fg:red bold bg:#a3aed2 bold"
 format = "[$user]($style)"
 show_always = true
 
