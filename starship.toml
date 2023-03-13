@@ -137,3 +137,4 @@ show_always = true
 
 [container]
 format = '[$symbol \[$name\]]($style) '
+style= "fg:#0f172a bg:#a3aed2"
