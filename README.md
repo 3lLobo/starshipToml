@@ -47,6 +47,16 @@ git config --global user.name "Your Name"
 git config --global user.email "
 ```
 
+### GitHub CLI
+
+Login with the cli tool for operations to run smooth.
+  
+```bash
+sudo apt install gh
+gh auth login
+```
+
+
 ## Vim
 
 Should be installed by default on Ubuntu.
