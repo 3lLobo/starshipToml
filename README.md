@@ -118,6 +118,19 @@ sudo rm /usr/bin/pip3
 sudo ln -s /usr/local/bin/pip3.11 /usr/bin/pip3
 ```
 
+Add the `dist-packages` folder to Python's system path, otherwise `apt` might brake:
+
+```bash
+sudo vim /usr/local/lib/python3.11/site-packages/dist-packages.pth
+```
+
+And add the following line:
+
+```vi
+/usr/lib/python3/dist-packages
+```
+
+
 ### Poetry
 
 Install Poetry with the new version of Python:
@@ -136,7 +149,7 @@ poetry completions zsh > ~/.zfunc/_poetry
 
 For anything web related.
 
-## NVM
+### NVM
 
 For the latest version of NVM check the [official repo](https://github.com/nvm-sh/nvm#install--update-script).
   
@@ -220,3 +233,5 @@ sudo apt-get install -y kubectl
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 ```
+
+
