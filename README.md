@@ -100,11 +100,15 @@ Get the download link for the latest official version of Python 3.11 from [here]
 Then install into `/usr/local`:
 
 ```bash
-cd /usr/local/src
+cd /usr/bin
 sudo wget https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz
 sudo tar xzf Python-3.11.3.tgz
 cd Python-3.11.3
-sudo ./configure --enable-optimizations
+sudo ./configure --enable-optimizations | grep no
+```
+You'll see a list of missing gcc or c packages. Try to install `sudo apt install` as many of them as you can.
+Then install Python:
+```bash
 sudo make altinstall
 ```
 
@@ -152,6 +156,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 Add the completion to our zsh:
 
 ```bash
+mkdir ~/.zfunc
 poetry completions zsh > ~/.zfunc/_poetry
 ```
 
