@@ -1,5 +1,14 @@
 # Makes you feel at home on any machine 💫
 
+##  OmZsh
+
+Install the zsh shell and OmZsh:
+
+```bash
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Starship 🚀
 
 A pretty Terminal is a must!
@@ -10,6 +19,17 @@ On Linux make sure `fc-cache` is installed.
 ./installNerdFonts.sh
 ./installStarship.sh
 ```
+
+## Vim
+
+Should be installed by default on Ubuntu.
+
+### Install Vim
+
+```bash
+sudo apt-get install vim
+```
+
 
 ## Bash Zsh profile
 
@@ -56,16 +76,12 @@ sudo apt install gh
 gh auth login
 ```
 
-
-## Vim
-
-Should be installed by default on Ubuntu.
-
-### Install Vim
+`gh` uses MacVim to edit commit messages. Let's trick it into using `vim`:
 
 ```bash
-sudo apt-get install vim
+sudo ln -s /usr/bin/vim /usr/bin/mvim
 ```
+
 
 ## Rust ®️
 
