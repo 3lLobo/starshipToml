@@ -1,5 +1,14 @@
 # Makes you feel at home on any machine 💫
 
+##  OmZsh
+
+Install the zsh shell and OmZsh:
+
+```bash
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Starship 🚀
 
 A pretty Terminal is a must!
@@ -10,6 +19,17 @@ On Linux make sure `fc-cache` is installed.
 ./installNerdFonts.sh
 ./installStarship.sh
 ```
+
+## Vim
+
+Should be installed by default on Ubuntu.
+
+### Install Vim
+
+```bash
+sudo apt-get install vim
+```
+
 
 ## Bash Zsh profile
 
@@ -56,16 +76,12 @@ sudo apt install gh
 gh auth login
 ```
 
-
-## Vim
-
-Should be installed by default on Ubuntu.
-
-### Install Vim
+`gh` uses MacVim to edit commit messages. Let's trick it into using `vim`:
 
 ```bash
-sudo apt-get install vim
+sudo ln -s /usr/bin/vim /usr/bin/mvim
 ```
+
 
 ## Rust ®️
 
@@ -100,11 +116,15 @@ Get the download link for the latest official version of Python 3.11 from [here]
 Then install into `/usr/local`:
 
 ```bash
-cd /usr/local/src
+cd /usr/bin
 sudo wget https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz
 sudo tar xzf Python-3.11.3.tgz
 cd Python-3.11.3
-sudo ./configure --enable-optimizations
+sudo ./configure --enable-optimizations | grep no
+```
+You'll see a list of missing gcc or c packages. Try to install `sudo apt install` as many of them as you can.
+Then install Python:
+```bash
 sudo make altinstall
 ```
 
@@ -152,6 +172,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 Add the completion to our zsh:
 
 ```bash
+mkdir ~/.zfunc
 poetry completions zsh > ~/.zfunc/_poetry
 ```
 
