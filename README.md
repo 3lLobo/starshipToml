@@ -1,5 +1,7 @@
 # Makes you feel at home on any machine 💫
 
+![image](https://github.com/3lLobo/starshipToml/assets/25290565/76e09b5f-f431-4513-b04b-cfbb3227373a)
+
 ##  OmZsh
 
 Install the zsh shell and OmZsh:
