@@ -13,6 +13,7 @@ git push origin $BRANCH_NAME
 if command -v gh &>/dev/null; then
   # Create a pull request
   gh pr create --title "$COMMIT_MESSAGE" --body "Update $TODAY"
+  gh pr merge --auto
 fi
 
 echo "Ready to go to Mars 🚀"
