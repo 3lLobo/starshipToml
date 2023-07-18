@@ -111,6 +111,24 @@ Let's use the latest version, it's much faster and debugging has leveled up.
 
 ### Install Python 3.11
 
+#### the Easy Way
+
+```bash
+sudo apt install python3.11-full
+```
+
+or on older versions of Ubuntu:
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.11 python3.11-dev python3.11-venv
+```
+
+
+#### the Hard Way
+
+
 Get the download link for the latest official version of Python 3.11 from [here](https://www.python.org/downloads/source/)
 
 Then install into `/usr/local`:
