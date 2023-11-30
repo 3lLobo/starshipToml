@@ -54,6 +54,13 @@ autoload -Uz compinit && compinit
 
 Watch out for an infinite sourcing loop between `.bashrc` and `.profile`!
 
+## Clipboard history - copyQ
+
+
+Clipboard manager for Linux.
+Pull and [build](https://copyq.readthedocs.io/en/latest/build-source-code.html).
+
+
 ## Git
 
 Set vim as default editor:
