@@ -305,7 +305,8 @@ sudo systemctl enable xrdp --now
 
 Client:
 ```bash
-sudo apt install remmina remmina-gnome
+sudo apt install remmina
+
 ```
 
 ### SSH
@@ -322,5 +323,18 @@ Key based authentication:
 
 ```bash
 ssh-copy-id user@host
+```
+
+## Auto-upgrade
+
+Update the system on every boot up:
+
+```bash
+sudo crontab -e
+```
+Then add:
+
+```vim
+@reboot DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y
 ```
 
