@@ -293,3 +293,34 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bas
 ```
 
 
+## Remote access
+
+### xrdp
+
+Server:
+```bash
+sudo apt install xfce4 xfce4-goodies xrdp -y
+sudo systemctl enable xrdp --now
+```
+
+Client:
+```bash
+sudo apt install remmina remmina-gnome
+```
+
+### SSH
+
+Enable SSH server:
+
+```bash
+sudo apt install openssh-server
+ssh-keygen -A
+sudo systemctl enable ssh --now
+```
+
+Key based authentication:
+
+```bash
+ssh-copy-id user@host
+```
+
