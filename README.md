@@ -241,26 +241,6 @@ npm install --global yarn
 
 If you are on WSL2, install Docker Desktop for Windows and enable the WSL2 integration.
 
-<!-- ### OnKali?
-
-```bash
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg
-
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-echo \
-"deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -->
 
 ### OnDebian / amd64
 
@@ -364,7 +344,7 @@ sudo crontab -e
 ```
 Then add:
 
-```vim
-@reboot DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y
+```bash
+# Wait for the network to come up
+@reboot sleep 60 && apt update && apt upgrade -y
 ```
-
