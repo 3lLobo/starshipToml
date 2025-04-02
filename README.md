@@ -33,7 +33,7 @@ sudo apt-get install vim
 ```
 
 
-## Bash Zsh profile
+<!-- ## Bash Zsh profile
 
 Pulse all custom settings and aliases from `.bashrc` to the `.profile` file.
 
@@ -52,7 +52,7 @@ fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 ```
 
-Watch out for an infinite sourcing loop between `.bashrc` and `.profile`!
+Watch out for an infinite sourcing loop between `.bashrc` and `.profile`! -->
 
 ## Clipboard history - copyQ
 
