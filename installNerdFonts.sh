@@ -4,7 +4,7 @@ echo "[-] Download fonts [-]"
 export FONT_NAME="RobotoMono"
 export FONT_URL=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep browser_download_url | grep $FONT_NAME | cut -d '"' -f 4)
 echo $FONT_URL
-wget $FONT_URL
+curl -O $FONT_URL
 # Unzip and overwrite if necessary
 echo "[-] Unzip fonts [-]"
 unzip -o -d ~/.local/share/fonts/ $FONT_NAME.zip
