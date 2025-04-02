@@ -33,7 +33,7 @@ sudo apt-get install vim
 ```
 
 
-## Bash Zsh profile
+<!-- ## Bash Zsh profile
 
 Pulse all custom settings and aliases from `.bashrc` to the `.profile` file.
 
@@ -52,7 +52,7 @@ fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 ```
 
-Watch out for an infinite sourcing loop between `.bashrc` and `.profile`!
+Watch out for an infinite sourcing loop between `.bashrc` and `.profile`! -->
 
 ## Clipboard history - copyQ
 
@@ -288,12 +288,8 @@ sudo dpkg -i minikube_latest_amd64.deb
 ### Install Kubectl
 
 ```bash
-sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo touch /etc/apt/sources.list.d/kubernetes.list
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
 ### Install Helm
