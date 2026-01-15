@@ -7,3 +7,7 @@ vnv() {
         source .venv/bin/activate
     fi
 }
+
+# Ping
+alias pingg='ping -c 5 google.com'
+alias pingh='ping -c 5 github.com'

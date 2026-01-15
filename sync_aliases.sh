@@ -1,1 +1,1 @@
-cp ./aliases.zsh $ZSH_CUSTOM
+cp ./aliases.zsh ~/.oh-my-zsh/custom
