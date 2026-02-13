@@ -11,3 +11,6 @@ vnv() {
 # Ping
 alias pingg='ping -c 5 google.com'
 alias pingh='ping -c 5 github.com'
+
+# Nvidia Gpu fix
+alias fix-gpu='sudo dkms autoinstall && sudo modprobe nvidia'
