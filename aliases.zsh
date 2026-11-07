@@ -50,3 +50,5 @@ usbmnt() {
     fi
 }
 
+# Open file/URL with default app (detached, silent)
+xo() { xdg-open "$@" >/dev/null 2>&1 &! }
